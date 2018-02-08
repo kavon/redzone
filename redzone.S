@@ -1,14 +1,18 @@
 
+#ifdef __linux__
+  #define GSYM(X) __ ## X
+#else
+  #define GSYM(X) _ ## X
+#endif
+
 #define WORDS	2048
-
 #define SPIN	20000
-
 #define STOP	100000
 
 	.text
 	.p2align 3
-	.globl	_testRedZone
-_testRedZone:
+	.globl	GSYM(testRedZone)
+GSYM(testRedZone):
 	subq 	$4, %rsp	// make some headroom so we don't overwrite ret addr
 
 	movq 	%rsp, %rdi
