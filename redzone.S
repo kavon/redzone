@@ -1,6 +1,6 @@
 
 #ifdef __linux__
-  #define GSYM(X) __ ## X
+  #define GSYM(X) X
 #else
   #define GSYM(X) _ ## X
 #endif
