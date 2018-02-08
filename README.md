@@ -3,7 +3,7 @@ for those paranoid that the kernel clobbers userspace
 
 #### why though
 
-The System V ABI guarantees that the 128 bytes below the stack pointer
+The x86-64 System V ABI guarantees that the 128 bytes below the stack pointer
 will always be preserved by the operating system.
 This 128-byte area is known as the "red zone".
 Unfortunately, the ABI does not explicitly say what happens to memory **beyond**
